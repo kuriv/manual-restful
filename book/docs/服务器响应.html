@@ -1,0 +1,351 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>服务器响应 · RESTful</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Kuriv Vesti">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-okaidia.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="状态码.html" />
+    
+
+    
+        <link rel="shortcut icon" href='../favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" href='../favicon.png'>
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="../favicon-120x120.png">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="../favicon-180x180.png">
+        
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    RESTful
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="URL 设计.html">
+            
+                <a href="URL 设计.html">
+            
+                    
+                    URL 设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" data-path="状态码.html">
+            
+                <a href="状态码.html">
+            
+                    
+                    状态码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.1.3" data-path="服务器响应.html">
+            
+                <a href="服务器响应.html">
+            
+                    
+                    服务器响应
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >服务器响应</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x670D;&#x52A1;&#x5668;&#x54CD;&#x5E94;">&#x670D;&#x52A1;&#x5668;&#x54CD;&#x5E94;</h1>
+<ul>
+<li><a href="#&#x4E0D;&#x8981;&#x8FD4;&#x56DE;&#x7EAF;&#x672C;&#x6587;">&#x4E0D;&#x8981;&#x8FD4;&#x56DE;&#x7EAF;&#x672C;&#x6587;</a></li>
+<li><a href="#&#x53D1;&#x751F;&#x9519;&#x8BEF;&#x65F6;&#xFF0C;&#x4E0D;&#x8981;&#x8FD4;&#x56DE;-200-&#x72B6;&#x6001;&#x7801;">&#x53D1;&#x751F;&#x9519;&#x8BEF;&#x65F6;&#xFF0C;&#x4E0D;&#x8981;&#x8FD4;&#x56DE; 200 &#x72B6;&#x6001;&#x7801;</a></li>
+<li><a href="#&#x63D0;&#x4F9B;&#x94FE;&#x63A5;">&#x63D0;&#x4F9B;&#x94FE;&#x63A5;</a></li>
+</ul>
+<h2 id="&#x4E0D;&#x8981;&#x8FD4;&#x56DE;&#x7EAF;&#x672C;&#x6587;">&#x4E0D;&#x8981;&#x8FD4;&#x56DE;&#x7EAF;&#x672C;&#x6587;</h2>
+<p>API &#x8FD4;&#x56DE;&#x7684;&#x6570;&#x636E;&#x683C;&#x5F0F;&#xFF0C;&#x4E0D;&#x5E94;&#x8BE5;&#x662F;&#x7EAF;&#x6587;&#x672C;&#xFF0C;&#x800C;&#x5E94;&#x8BE5;&#x662F;&#x4E00;&#x4E2A; JSON &#x5BF9;&#x8C61;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x6837;&#x624D;&#x80FD;&#x8FD4;&#x56DE;&#x6807;&#x51C6;&#x7684;&#x7ED3;&#x6784;&#x5316;&#x6570;&#x636E;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x56DE;&#x5E94;&#x7684; HTTP &#x5934;&#x7684; <code>Content-Type</code> &#x5C5E;&#x6027;&#x8981;&#x8BBE;&#x4E3A; <code>application/json</code> &#x3002;&#x5BA2;&#x6237;&#x7AEF;&#x8BF7;&#x6C42;&#x65F6;&#xFF0C;&#x4E5F;&#x8981;&#x660E;&#x786E;&#x544A;&#x8BC9;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x53EF;&#x4EE5;&#x63A5;&#x53D7; JSON &#x683C;&#x5F0F;&#xFF0C;&#x5373;&#x8BF7;&#x6C42;&#x7684; HTTP &#x5934;&#x7684; <code>Accept</code> &#x5C5E;&#x6027;&#x4E5F;&#x8981;&#x8BBE;&#x6210; <code>application/json</code> &#x3002;</p>
+<pre class="language-"><code>GET /articles/2 HTTP/1.1
+Accept: application/json
+</code></pre><h2 id="&#x53D1;&#x751F;&#x9519;&#x8BEF;&#x65F6;&#xFF0C;&#x4E0D;&#x8981;&#x8FD4;&#x56DE;-200-&#x72B6;&#x6001;&#x7801;">&#x53D1;&#x751F;&#x9519;&#x8BEF;&#x65F6;&#xFF0C;&#x4E0D;&#x8981;&#x8FD4;&#x56DE; 200 &#x72B6;&#x6001;&#x7801;</h2>
+<p>&#x6709;&#x4E00;&#x79CD;&#x4E0D;&#x6070;&#x5F53;&#x7684;&#x505A;&#x6CD5;&#x662F;&#xFF0C;&#x5373;&#x4F7F;&#x53D1;&#x751F;&#x9519;&#x8BEF;&#xFF0C;&#x4E5F;&#x8FD4;&#x56DE; 200 &#x72B6;&#x6001;&#x7801;&#xFF0C;&#x628A;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#x653E;&#x5728;&#x6570;&#x636E;&#x4F53;&#x91CC;&#x9762;&#xFF0C;&#x5C31;&#x50CF;&#x4E0B;&#x9762;&#x8FD9;&#x6837;&#x3002;</p>
+<pre class="language-"><code>HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  &quot;status&quot;: &quot;failure&quot;,
+  &quot;data&quot;: {
+    &quot;error&quot;: &quot;Expected at least two items in list.&quot;
+  }
+}
+</code></pre><p>&#x5728;&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;&#x53EA;&#x6709;&#x89E3;&#x6790;&#x6570;&#x636E;&#x4F53;&#x4EE5;&#x540E;&#xFF0C;&#x624D;&#x80FD;&#x5F97;&#x77E5;&#x64CD;&#x4F5C;&#x5931;&#x8D25;&#xFF0C;&#x8FD9;&#x79CD;&#x505A;&#x6CD5;&#x5B9E;&#x9645;&#x4E0A;&#x53D6;&#x6D88;&#x4E86;&#x72B6;&#x6001;&#x7801;&#xFF0C;&#x662F;&#x5B8C;&#x5168;&#x4E0D;&#x53EF;&#x53D6;&#x7684;&#x3002;&#x800C;&#x6B63;&#x786E;&#x7684;&#x505A;&#x6CD5;&#x5E94;&#x8BE5;&#x662F;&#xFF0C;&#x72B6;&#x6001;&#x7801;&#x53CD;&#x6620;&#x53D1;&#x751F;&#x7684;&#x9519;&#x8BEF;&#xFF0C;&#x5177;&#x4F53;&#x7684;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#x653E;&#x5728;&#x6570;&#x636E;&#x4F53;&#x91CC;&#x9762;&#x8FD4;&#x56DE;&#x3002;</p>
+<pre class="language-"><code>HTTP/1.1 400 Bad Request
+Content-Type: application/json
+
+{
+  &quot;error&quot;: &quot;Invalid input.&quot;,
+  &quot;detail&quot;: {
+     &quot;surname&quot;: &quot;This field is required.&quot;
+  }
+}
+</code></pre><h2 id="&#x63D0;&#x4F9B;&#x94FE;&#x63A5;">&#x63D0;&#x4F9B;&#x94FE;&#x63A5;</h2>
+<p>API &#x7684;&#x4F7F;&#x7528;&#x8005;&#x672A;&#x5FC5;&#x77E5;&#x9053; URL &#x662F;&#x600E;&#x4E48;&#x8BBE;&#x8BA1;&#x7684;&#xFF0C;&#x4E00;&#x4E2A;&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#x5C31;&#x662F;&#xFF0C;&#x5728;&#x56DE;&#x5E94;&#x4E2D;&#x7ED9;&#x51FA;&#x76F8;&#x5173;&#x94FE;&#x63A5;&#xFF0C;&#x4FBF;&#x4E8E;&#x4E0B;&#x4E00;&#x6B65;&#x64CD;&#x4F5C;&#x3002;&#x8FD9;&#x6837;&#x7684;&#x8BDD;&#xFF0C;&#x7528;&#x6237;&#x53EA;&#x8981;&#x8BB0;&#x4F4F;&#x4E00;&#x4E2A; URL &#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x53D1;&#x73B0;&#x5176;&#x4ED6;&#x7684; URL &#xFF0C;&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#x53EB;&#x505A; HATEOAS &#x3002;&#x4F8B;&#x5982;&#xFF0C; GitHub &#x7684; API &#x90FD;&#x5728; <a href="https://api.github.com/" target="_blank">&#x8FD9;&#x4E2A;&#x57DF;&#x540D;</a> &#xFF0C;&#x8BBF;&#x95EE;&#x5B83;&#x5C31;&#x53EF;&#x4EE5;&#x5F97;&#x5230;&#x5176;&#x4ED6;&#x7684; URL &#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="状态码.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 状态码">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"服务器响应","level":"1.1.3","depth":2,"previous":{"title":"状态码","level":"1.1.2","depth":2,"path":"docs/状态码.md","ref":"docs/状态码.md","articles":[]},"dir":"ltr"},"config":{"plugins":["back-to-top-button","chapter-fold","favicon","hide-element","lightbox","-highlight","prism","-lunr","-search","search-pro","splitter","livereload"],"root":"","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"livereload":{},"splitter":{},"search-pro":{},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico","appleTouch":"favicon.png","appleTouchMore":{"120x120":"favicon-120x120.png","180x180":"favicon-180x180.png"}},"lightbox":{"jquery":true,"sameUuid":false},"back-to-top-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Kuriv Vesti","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"","variables":{},"title":"RESTful","language":"zh-hans","gitbook":">=3.0.0","description":"RESTful 手册","direction":"ltr"},"file":{"path":"docs/服务器响应.md","mtime":"2020-06-23T06:39:44.396Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-23T06:39:46.809Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
